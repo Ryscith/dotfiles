@@ -1,0 +1,23 @@
+" Special
+let wallpaper  = "/home/ryscith/Sync/Purple_KeyboardSwitch.png"
+let background = "#1a1a1a"
+let foreground = "#c5c5c5"
+let cursor     = "#c5c5c5"
+
+" Colors
+let color0  = "#1a1a1a"
+let color1  = "#733f85"
+let color2  = "#634f72"
+let color3  = "#63817e"
+let color4  = "#eb6025"
+let color5  = "#8f9495"
+let color6  = "#88c4bd"
+let color7  = "#c5c5c5"
+let color8  = "#535353"
+let color9  = "#733f85"
+let color10 = "#634f72"
+let color11 = "#63817e"
+let color12 = "#eb6025"
+let color13 = "#8f9495"
+let color14 = "#88c4bd"
+let color15 = "#c5c5c5"

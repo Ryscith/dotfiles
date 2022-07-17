@@ -1,0 +1,27 @@
+{
+    "wallpaper": "/home/ryscith/Sync/PurpleOrange_GalaxyMonster.jpg",
+    "alpha": "100",
+    "special": {
+        "background": "#050316",
+        "foreground": "#d987ce",
+        "cursor": "#d987ce"
+    },
+    "colors": {
+        "color0": "#050316",
+        "color1": "#9B0615",
+        "color2": "#D60C14",
+        "color3": "#BA3344",
+        "color4": "#CFA742",
+        "color5": "#190B96",
+        "color6": "#3E25BF",
+        "color7": "#d987ce",
+        "color8": "#975e90",
+        "color9": "#9B0615",
+        "color10": "#D60C14",
+        "color11": "#BA3344",
+        "color12": "#CFA742",
+        "color13": "#190B96",
+        "color14": "#3E25BF",
+        "color15": "#d987ce"
+    }
+}

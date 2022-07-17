@@ -1,0 +1,27 @@
+{
+    "wallpaper": "/home/ryscith/Sync/mountain-1_HD.jpg",
+    "alpha": "100",
+    "special": {
+        "background": "#4b4372",
+        "foreground": "#f0e2ef",
+        "cursor": "#f0e2ef"
+    },
+    "colors": {
+        "color0": "#4b4372",
+        "color1": "#B1AFE9",
+        "color2": "#C2A1DE",
+        "color3": "#CAB2EE",
+        "color4": "#DAB4EE",
+        "color5": "#BFC1EA",
+        "color6": "#D7C9F2",
+        "color7": "#f0e2ef",
+        "color8": "#a89ea7",
+        "color9": "#B1AFE9",
+        "color10": "#C2A1DE",
+        "color11": "#CAB2EE",
+        "color12": "#DAB4EE",
+        "color13": "#BFC1EA",
+        "color14": "#D7C9F2",
+        "color15": "#f0e2ef"
+    }
+}

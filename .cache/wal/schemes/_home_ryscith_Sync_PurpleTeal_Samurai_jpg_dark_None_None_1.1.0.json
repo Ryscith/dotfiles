@@ -1,0 +1,27 @@
+{
+    "wallpaper": "/home/ryscith/Sync/PurpleTeal_Samurai.jpg",
+    "alpha": "100",
+    "special": {
+        "background": "#180d1c",
+        "foreground": "#edc4f2",
+        "cursor": "#edc4f2"
+    },
+    "colors": {
+        "color0": "#180d1c",
+        "color1": "#9733A8",
+        "color2": "#AE4ABA",
+        "color3": "#A756D5",
+        "color4": "#E064EB",
+        "color5": "#4BBEB9",
+        "color6": "#A7B8DA",
+        "color7": "#edc4f2",
+        "color8": "#a589a9",
+        "color9": "#9733A8",
+        "color10": "#AE4ABA",
+        "color11": "#A756D5",
+        "color12": "#E064EB",
+        "color13": "#4BBEB9",
+        "color14": "#A7B8DA",
+        "color15": "#edc4f2"
+    }
+}

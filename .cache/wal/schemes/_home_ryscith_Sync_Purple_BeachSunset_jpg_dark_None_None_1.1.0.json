@@ -1,0 +1,27 @@
+{
+    "wallpaper": "/home/ryscith/Sync/Purple_BeachSunset.jpg",
+    "alpha": "100",
+    "special": {
+        "background": "#251425",
+        "foreground": "#edd2e1",
+        "cursor": "#edd2e1"
+    },
+    "colors": {
+        "color0": "#251425",
+        "color1": "#7B5DC6",
+        "color2": "#8C5AAC",
+        "color3": "#F86E8F",
+        "color4": "#946DD9",
+        "color5": "#C46FD1",
+        "color6": "#AD8AF6",
+        "color7": "#edd2e1",
+        "color8": "#a5939d",
+        "color9": "#7B5DC6",
+        "color10": "#8C5AAC",
+        "color11": "#F86E8F",
+        "color12": "#946DD9",
+        "color13": "#C46FD1",
+        "color14": "#AD8AF6",
+        "color15": "#edd2e1"
+    }
+}

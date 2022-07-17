@@ -1,0 +1,27 @@
+{
+    "wallpaper": "/home/ryscith/Sync/FloatingCityGlitch.jpg",
+    "alpha": "100",
+    "special": {
+        "background": "#080829",
+        "foreground": "#abe4d7",
+        "cursor": "#abe4d7"
+    },
+    "colors": {
+        "color0": "#080829",
+        "color1": "#5E6597",
+        "color2": "#A161A2",
+        "color3": "#B774B6",
+        "color4": "#2DA09B",
+        "color5": "#539CA0",
+        "color6": "#5DD0B0",
+        "color7": "#abe4d7",
+        "color8": "#779f96",
+        "color9": "#5E6597",
+        "color10": "#A161A2",
+        "color11": "#B774B6",
+        "color12": "#2DA09B",
+        "color13": "#539CA0",
+        "color14": "#5DD0B0",
+        "color15": "#abe4d7"
+    }
+}

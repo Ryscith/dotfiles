@@ -1,0 +1,27 @@
+{
+    "wallpaper": "/home/ryscith/Sync/SoftCrescentMoon.jpg",
+    "alpha": "100",
+    "special": {
+        "background": "#42355f",
+        "foreground": "#f5d0eb",
+        "cursor": "#f5d0eb"
+    },
+    "colors": {
+        "color0": "#42355f",
+        "color1": "#A685BD",
+        "color2": "#958AC2",
+        "color3": "#AD92C9",
+        "color4": "#B4B9E5",
+        "color5": "#D6A0D2",
+        "color6": "#F4AADB",
+        "color7": "#f5d0eb",
+        "color8": "#ab91a4",
+        "color9": "#A685BD",
+        "color10": "#958AC2",
+        "color11": "#AD92C9",
+        "color12": "#B4B9E5",
+        "color13": "#D6A0D2",
+        "color14": "#F4AADB",
+        "color15": "#f5d0eb"
+    }
+}

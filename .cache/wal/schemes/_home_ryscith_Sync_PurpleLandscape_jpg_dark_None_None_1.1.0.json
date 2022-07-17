@@ -1,0 +1,27 @@
+{
+    "wallpaper": "/home/ryscith/Sync/PurpleLandscape.jpg",
+    "alpha": "100",
+    "special": {
+        "background": "#090312",
+        "foreground": "#a2c8e8",
+        "cursor": "#a2c8e8"
+    },
+    "colors": {
+        "color0": "#090312",
+        "color1": "#4E3E9E",
+        "color2": "#3354A2",
+        "color3": "#5D2AEF",
+        "color4": "#685DF0",
+        "color5": "#AB13B6",
+        "color6": "#C20094",
+        "color7": "#a2c8e8",
+        "color8": "#718ca2",
+        "color9": "#4E3E9E",
+        "color10": "#3354A2",
+        "color11": "#5D2AEF",
+        "color12": "#685DF0",
+        "color13": "#AB13B6",
+        "color14": "#C20094",
+        "color15": "#a2c8e8"
+    }
+}
