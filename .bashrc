@@ -104,6 +104,7 @@ alias free='free -m'                      # show sizes in MB
 alias np='nano -w PKGBUILD'
 alias more=less
 alias ls='exa --icons'
+alias la='ls -al'
 
 # Automatically ls after any cd
 chdir () 
