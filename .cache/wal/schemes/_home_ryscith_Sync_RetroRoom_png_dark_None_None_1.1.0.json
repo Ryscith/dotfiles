@@ -1,0 +1,27 @@
+{
+    "wallpaper": "/home/ryscith/Sync/RetroRoom.png",
+    "alpha": "100",
+    "special": {
+        "background": "#0f0b10",
+        "foreground": "#afc0e1",
+        "cursor": "#afc0e1"
+    },
+    "colors": {
+        "color0": "#0f0b10",
+        "color1": "#572A59",
+        "color2": "#5C466D",
+        "color3": "#97355F",
+        "color4": "#2C2E8B",
+        "color5": "#5647A7",
+        "color6": "#A55BA6",
+        "color7": "#afc0e1",
+        "color8": "#7a869d",
+        "color9": "#572A59",
+        "color10": "#5C466D",
+        "color11": "#97355F",
+        "color12": "#2C2E8B",
+        "color13": "#5647A7",
+        "color14": "#A55BA6",
+        "color15": "#afc0e1"
+    }
+}

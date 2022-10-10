@@ -1,0 +1,27 @@
+{
+    "wallpaper": "/home/ryscith/Sync/FuturisticCity.jpg",
+    "alpha": "100",
+    "special": {
+        "background": "#120a18",
+        "foreground": "#dcacda",
+        "cursor": "#dcacda"
+    },
+    "colors": {
+        "color0": "#120a18",
+        "color1": "#5A49B5",
+        "color2": "#6D59CA",
+        "color3": "#A252A4",
+        "color4": "#B66CAA",
+        "color5": "#EC6EB7",
+        "color6": "#9C61D2",
+        "color7": "#dcacda",
+        "color8": "#9a7898",
+        "color9": "#5A49B5",
+        "color10": "#6D59CA",
+        "color11": "#A252A4",
+        "color12": "#B66CAA",
+        "color13": "#EC6EB7",
+        "color14": "#9C61D2",
+        "color15": "#dcacda"
+    }
+}

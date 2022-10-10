@@ -1,0 +1,27 @@
+{
+    "wallpaper": "/home/ryscith/Sync/FuturisticCity_Moon2.jpg",
+    "alpha": "100",
+    "special": {
+        "background": "#0e0f2b",
+        "foreground": "#c3a5e4",
+        "cursor": "#c3a5e4"
+    },
+    "colors": {
+        "color0": "#0e0f2b",
+        "color1": "#60348C",
+        "color2": "#5E4BA4",
+        "color3": "#3049C2",
+        "color4": "#655DDC",
+        "color5": "#A34CA1",
+        "color6": "#B64EA9",
+        "color7": "#c3a5e4",
+        "color8": "#88739f",
+        "color9": "#60348C",
+        "color10": "#5E4BA4",
+        "color11": "#3049C2",
+        "color12": "#655DDC",
+        "color13": "#A34CA1",
+        "color14": "#B64EA9",
+        "color15": "#c3a5e4"
+    }
+}

@@ -1,0 +1,27 @@
+{
+    "wallpaper": "/home/ryscith/Sync/MagikarpOcean.png",
+    "alpha": "100",
+    "special": {
+        "background": "#092336",
+        "foreground": "#f4c6bd",
+        "cursor": "#f4c6bd"
+    },
+    "colors": {
+        "color0": "#092336",
+        "color1": "#EB5D56",
+        "color2": "#FA8830",
+        "color3": "#FE8E76",
+        "color4": "#2E5D84",
+        "color5": "#51768E",
+        "color6": "#77899A",
+        "color7": "#f4c6bd",
+        "color8": "#aa8a84",
+        "color9": "#EB5D56",
+        "color10": "#FA8830",
+        "color11": "#FE8E76",
+        "color12": "#2E5D84",
+        "color13": "#51768E",
+        "color14": "#77899A",
+        "color15": "#f4c6bd"
+    }
+}

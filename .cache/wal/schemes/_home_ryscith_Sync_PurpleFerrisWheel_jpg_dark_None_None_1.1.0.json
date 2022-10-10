@@ -1,0 +1,27 @@
+{
+    "wallpaper": "/home/ryscith/Sync/PurpleFerrisWheel.jpg",
+    "alpha": "100",
+    "special": {
+        "background": "#122444",
+        "foreground": "#eeb2d7",
+        "cursor": "#eeb2d7"
+    },
+    "colors": {
+        "color0": "#122444",
+        "color1": "#9D54A3",
+        "color2": "#B157A4",
+        "color3": "#D15DAD",
+        "color4": "#DD60B3",
+        "color5": "#E766B9",
+        "color6": "#9A57C9",
+        "color7": "#eeb2d7",
+        "color8": "#a67c96",
+        "color9": "#9D54A3",
+        "color10": "#B157A4",
+        "color11": "#D15DAD",
+        "color12": "#DD60B3",
+        "color13": "#E766B9",
+        "color14": "#9A57C9",
+        "color15": "#eeb2d7"
+    }
+}

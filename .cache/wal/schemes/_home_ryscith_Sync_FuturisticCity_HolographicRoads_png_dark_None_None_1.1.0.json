@@ -1,0 +1,27 @@
+{
+    "wallpaper": "/home/ryscith/Sync/FuturisticCity_HolographicRoads.png",
+    "alpha": "100",
+    "special": {
+        "background": "#1b0721",
+        "foreground": "#acdcee",
+        "cursor": "#acdcee"
+    },
+    "colors": {
+        "color0": "#1b0721",
+        "color1": "#4448AB",
+        "color2": "#654FA2",
+        "color3": "#6861DC",
+        "color4": "#8F4CA6",
+        "color5": "#9456C9",
+        "color6": "#679BF2",
+        "color7": "#acdcee",
+        "color8": "#789aa6",
+        "color9": "#4448AB",
+        "color10": "#654FA2",
+        "color11": "#6861DC",
+        "color12": "#8F4CA6",
+        "color13": "#9456C9",
+        "color14": "#679BF2",
+        "color15": "#acdcee"
+    }
+}
