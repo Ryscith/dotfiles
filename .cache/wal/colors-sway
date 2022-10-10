@@ -1,0 +1,21 @@
+set $wallpaper /home/ryscith/Sync/Purple_KeyboardSwitch.png
+
+set $background #1a1a1a
+set $foreground #c5c5c5
+
+set $color0 #1a1a1a
+set $color1 #733f85
+set $color2 #634f72
+set $color3 #63817e
+set $color4 #eb6025
+set $color5 #8f9495
+set $color6 #88c4bd
+set $color7 #c5c5c5
+set $color8 #535353
+set $color9 #733f85
+set $color10 #634f72
+set $color11 #63817e
+set $color12 #eb6025
+set $color13 #8f9495
+set $color14 #88c4bd
+set $color15 #c5c5c5
