@@ -1,0 +1,27 @@
+{
+    "wallpaper": "/home/ryscith/Sync/Purple_KeyboardSwitch.png",
+    "alpha": "100",
+    "special": {
+        "background": "#0a0a0a",
+        "foreground": "#adadad",
+        "cursor": "#adadad"
+    },
+    "colors": {
+        "color0": "#0a0a0a",
+        "color1": "#574d5d",
+        "color2": "#5d4d74",
+        "color3": "#5b7572",
+        "color4": "#84728c",
+        "color5": "#918f9d",
+        "color6": "#c09d8b",
+        "color7": "#adadad",
+        "color8": "#5b5b5c",
+        "color9": "#574d5d",
+        "color10": "#5d4d74",
+        "color11": "#5b7572",
+        "color12": "#84728c",
+        "color13": "#918f9d",
+        "color14": "#c09d8b",
+        "color15": "#adadad"
+    }
+}

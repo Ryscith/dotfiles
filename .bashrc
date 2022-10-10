@@ -55,4 +55,3 @@ alias dotfiles='/usr/bin/git --git-dir=$HOME/Repos/dotfiles/ --work-tree=$HOME'
 ## (you can write some initial letters of the command first).
 bind '"\e[A":history-search-backward'
 bind '"\e[B":history-search-forward'
-

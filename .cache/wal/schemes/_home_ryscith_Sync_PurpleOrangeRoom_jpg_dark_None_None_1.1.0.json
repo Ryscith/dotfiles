@@ -1,0 +1,27 @@
+{
+    "wallpaper": "/home/ryscith/Sync/PurpleOrangeRoom.jpg",
+    "alpha": "100",
+    "special": {
+        "background": "#110012",
+        "foreground": "#c878e3",
+        "cursor": "#c878e3"
+    },
+    "colors": {
+        "color0": "#110012",
+        "color1": "#E8056F",
+        "color2": "#6D0493",
+        "color3": "#4502A0",
+        "color4": "#8C0390",
+        "color5": "#A702A3",
+        "color6": "#E403A0",
+        "color7": "#c878e3",
+        "color8": "#8c549e",
+        "color9": "#E8056F",
+        "color10": "#6D0493",
+        "color11": "#4502A0",
+        "color12": "#8C0390",
+        "color13": "#A702A3",
+        "color14": "#E403A0",
+        "color15": "#c878e3"
+    }
+}

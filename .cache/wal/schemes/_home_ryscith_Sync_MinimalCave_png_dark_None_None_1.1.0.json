@@ -1,0 +1,27 @@
+{
+    "wallpaper": "/home/ryscith/Sync/MinimalCave.png",
+    "alpha": "100",
+    "special": {
+        "background": "#101214",
+        "foreground": "#eae4de",
+        "cursor": "#eae4de"
+    },
+    "colors": {
+        "color0": "#101214",
+        "color1": "#637C83",
+        "color2": "#718488",
+        "color3": "#A39B93",
+        "color4": "#DBB49B",
+        "color5": "#E4B99D",
+        "color6": "#E8C7B0",
+        "color7": "#eae4de",
+        "color8": "#a39f9b",
+        "color9": "#637C83",
+        "color10": "#718488",
+        "color11": "#A39B93",
+        "color12": "#DBB49B",
+        "color13": "#E4B99D",
+        "color14": "#E8C7B0",
+        "color15": "#eae4de"
+    }
+}

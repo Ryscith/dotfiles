@@ -1,0 +1,27 @@
+{
+    "wallpaper": "/home/ryscith/Sync/CartoonCity_Asian.jpg",
+    "alpha": "100",
+    "special": {
+        "background": "#1b1716",
+        "foreground": "#dfccc3",
+        "cursor": "#dfccc3"
+    },
+    "colors": {
+        "color0": "#1b1716",
+        "color1": "#B98773",
+        "color2": "#D7A846",
+        "color3": "#D69F63",
+        "color4": "#587395",
+        "color5": "#45A5BE",
+        "color6": "#A89997",
+        "color7": "#dfccc3",
+        "color8": "#9c8e88",
+        "color9": "#B98773",
+        "color10": "#D7A846",
+        "color11": "#D69F63",
+        "color12": "#587395",
+        "color13": "#45A5BE",
+        "color14": "#A89997",
+        "color15": "#dfccc3"
+    }
+}
