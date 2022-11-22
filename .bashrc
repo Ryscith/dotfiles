@@ -2,6 +2,9 @@
 # ~/.bashrc
 #
 
+### Make a bonsai tree in every new terminal
+#cbonsai -p
+
 export CDPATH=":$HOME:$HOME/College/CollegeClasses/Year4Senior:$HOME/College:/run/media/ryscith"
 
 export PATH="/home/ryscith/.local/bin:/home/ryscith/.emacs.d/bin:$PATH"
@@ -13,6 +16,10 @@ export PATH="/home/ryscith/.local/bin:/home/ryscith/.emacs.d/bin:$PATH"
 [[ $- != *i* ]] && return
 
 [[ -f ~/.welcome_screen ]] && . ~/.welcome_screen
+
+### Simple prompt
+
+export PS1="prompt>>"
 
 ### Colorful prompt
 
@@ -28,7 +35,7 @@ alias ls='exa --icons'
 
 ### Always-wanted options
 
-alias free='free -m'                # Display memory in megabytes
+# alias free='free -m'                # Display memory in megabytes
 alias grep='grep --colour=auto'
 alias egrep='egrep --colour=auto'
 alias fgrep='fgrep --colour=auto'
