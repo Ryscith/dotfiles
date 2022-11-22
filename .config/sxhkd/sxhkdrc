@@ -80,9 +80,9 @@ super + {p,b,comma,period}
 super + {_,shift + }c
 	bspc node -f {next,prev}.local.!hidden.window
 
-# focus the next/previous desktop in the current monitor
+# focus the next/previous monitor
 super + bracket{left,right}
-	bspc desktop -f {prev,next}.local
+	bspc monitor -f {prev,next}
 
 # focus the last node/desktop
 super + {grave,Tab}
@@ -164,7 +164,7 @@ super + shift + s
 
 # Shortcuts
 super + w 
-  firefox
+  brave
 
 super + n 
   thunar  
