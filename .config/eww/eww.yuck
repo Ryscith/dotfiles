@@ -1,0 +1,275 @@
+(defvar album_art_script "/home/ryscith/.config/eww/scripts/get_album_art.sh")
+
+(defwindow toolbar
+           :monitor 0
+           :windowtype "dock"
+           :geometry (geometry :x "0px"
+                               :y "0px"
+                               :width "100%"
+                               :height "36px"
+                               :anchor "top center")
+           :stacking "bg"
+           :reserve (struts :distance "36px" :side "top")
+           :wm-ignore false
+    (bar))
+
+(defwidget bar []
+    (centerbox :orientation "h"
+        (leftside)
+        (desktops)
+        (rightside)))
+
+;
+; Left Side Widgets
+;
+
+(defwidget leftside []
+    (box :class "leftside"
+         :halign "start"
+         :space-evenly false
+         (powermenu)
+         (spotify_logo)))
+
+;
+; Powermenu
+;
+
+(defwidget powermenu []
+    (label  :class "powermenu"
+            :text ""))
+
+;
+; Spotify
+;
+
+(defpoll song_artist
+         :interval "1s"
+         "playerctl --player=spotify metadata | sed -n 's/^.*artist[[:space:]]*//gp'")
+
+(defpoll song_name
+         :interval "1s"
+         "playerctl --player=spotify metadata | sed -n 's/^.*title[[:space:]]*//gp'")
+
+(defvar spotify-visible false)
+
+(defpoll player_status
+         :interval "0.5s"
+         :run-while spotify-visible
+         "playerctl --player=spotify status")
+
+(defvar album_art_location "/home/ryscith/Pictures/album_art")
+
+(defpoll song_time
+         :initial 0.0
+         :interval "1s"
+         "playerctl -p spotify position")
+
+(defpoll song_length
+         :initial 100.0
+         :interval "1s"
+         "playerctl -p spotify metadata mpris:length")
+
+(defwidget spotify_logo []
+           (eventbox :onhover "${EWW_CMD} open spotify_window & ${album_art_script}"
+                     :timeout "5s"
+                     (label :class "spotify_logo"
+                           :text "")))
+
+(defwidget spotify []
+    (eventbox :onhoverlost "${EWW_CMD} close spotify_window"
+              (box :class "spotify"
+                   :space-evenly false
+                   (box :class "album_art"
+                        :halign "center"
+                        (image :path "${album_art_location}"
+                               :image-width 120
+                               :image-height 120))
+                   (box :space-evenly false
+                        :orientation "v"
+                        (box :class "song_info"
+                             :orientation "v"
+                             :space-evenly false
+                             :halign "center"
+                             (label :class "song_name"
+                                    :text "\"${song_name}\"")
+                             (label :text "by")
+                             (label :class "artist_name"
+                                    :text "${song_artist}"))
+                        (box :class "track"
+                             :halign "center"
+                             (scale :class "track_slider"
+                                    :width 150
+                                    :value song_time
+                                    :min 0
+                                    :max {song_length / 1000000}
+                                    ))
+                        (box :class "player_controls"
+                             :space-evenly false
+                             :halign "center"
+                             (button :class "spotify_ctrl"
+                                     :onclick "playerctl --player=spotify previous && ${album_art_script}"
+                     :timeout "5s"
+                                     "")
+                             (button :class "spotify_ctrl"
+                                     :onclick "playerctl --player=spotify play-pause"
+                                     "${matches(player_status, 'Playing') ? '' : ''}")
+                             (button :class "spotify_ctrl"
+                                     :onclick "playerctl --player=spotify next && ${album_art_script}"
+                     :timeout "5s"
+                                     ""))
+                                     ))))
+
+(defwindow spotify_window
+           :geometry (geometry :x "20px"
+                               :y "40px"
+                               :anchor "top left"
+                               )
+           (spotify))
+
+;
+; BSPWM Desktops
+;
+
+(deflisten desktops_script "scripts/desktops")
+
+(defwidget desktops []
+    (literal    :valign "center"
+                :content desktops_script))
+
+;
+; Right Side Widgets
+;
+
+(defwidget rightside []
+    (box :class "rightside"
+         :halign "end"
+         :space-evenly false
+         (system_stats)
+         (clock)))
+
+;
+; System Stats Container
+;
+
+(defwidget system_stats []
+    (box :class "system_stats"
+         :orientation "h"
+         :space-evenly false
+         (ram)
+         (volume)))
+
+;
+; Time
+;
+
+(defvar time-visible false)
+
+(defpoll time
+         :interval "1s"
+         :initial "00:00"
+         :run-while time-visible
+         'date "+%l:%M %p"')
+
+(defvar cal-visible false)
+
+(defpoll calendar_day
+         :interval "1m"
+         :run-while cal-visible
+         'date "+%d"')
+
+(defpoll calendar_year
+         :interval "1m"
+         :run-while cal-visible
+         'date "+%Y"')
+
+(defpoll day
+         :interval "1s"
+         :initial "Nov 23"
+         :run-while day-visible
+         'date "+%a %d"')
+
+(defwidget cal []
+    (box :class "calendar"
+         :orientation "v"
+         :space-evenly false
+         day
+         (calendar :day calendar_day
+                   :year calendar_year
+                   :show-details true)))
+
+(defwindow calendar
+           :geometry (geometry :x "-10px"
+                               :y "40px"
+                               :anchor "top right"
+                               :width "270px"
+                               :height "60px")
+           (cal))
+
+(defvar day-visible false)
+
+
+(defwidget clock []
+    (box :class "clock"
+         :orientation "h"
+         :space-evenly false
+         (eventbox :onhover "${EWW_CMD} open calendar"
+                   :onhoverlost "${EWW_CMD} close calendar"
+                   (label :class "clock_text" :text "${time}"))))
+
+;
+; Volume
+;
+
+(defpoll volume_percent :interval "1s"
+                        :initial "50"
+         "amixer -D pulse sget Master | awk -F'[][]' '/Left:/ {print $2}' | tr -d '%'")
+(defvar reveal_vol false)
+
+(defwidget volume []
+        (box :orientation "h"
+             :space-evenly false
+        (eventbox :class "volume"
+                  :onhover "${EWW_CMD} update reveal_vol=true"
+                  :onhoverlost "${EWW_CMD} update reveal_vol=false"
+                  (box :orientation "h"
+                       :space-evenly false
+                       (revealer :transition "slideleft"
+                                 :reveal reveal_vol
+                                 :duration "500ms"
+                                 (box :class "volume_bar_background"
+                                      :orientation "h"
+                                      (scale :class "volume_bar"
+                                             :value volume_percent
+                                             :orientation "h"
+                                             :tooltip "Volume: ${volume_percent}%"
+                                             :max 101
+                                             :min 0
+                                             :onchange "amixer -D pulse sset Master {}%")))
+                       (button :onclick "pavucontrol &" :class "volume_icon" "")))))
+
+;
+; RAM Usage
+;
+
+(defpoll ram_usage
+         :interval "1s"
+         :initial "0.0 Gi"
+         "free -h | awk '/Mem:/ {print $3}' | sed -E 's/([[:digit:].]*)([[:alpha:]]*)/\\1 \\2/g'")
+
+(defvar reveal_ram false)
+
+(defwidget ram []
+    (box :orientation "h"
+         :space-evenly false
+         (eventbox :class "ram"
+                   :onhover "${EWW_CMD} update reveal_ram=true"
+                   :onhoverlost "${EWW_CMD} update reveal_ram=false"
+                   (box :orientation "h"
+                        :space-evenly false
+                        (revealer :transition "slideleft"
+                                  :reveal reveal_ram
+                                  :duration "500ms"
+                                  (label :class "ram_usage"
+                                         :text "${ram_usage}"))
+                        (label :class "ram_icon"
+                               :text "")))))

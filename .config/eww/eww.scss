@@ -1,0 +1,275 @@
+* {
+    all: unset;
+    font-family: "Fira Code",
+                 "Font Awesome 6 Free Regular",
+                 "Font Awesome 6 Free Solid";
+}
+
+// Catppuccin Macchiato Colors
+$base: #24273a;
+$text: #cad3f5;
+
+$surface0: #363a4f;
+$surface1: #494d64;
+
+$overlay0: #6e738d;
+$overlay1: #8087a2;
+
+$subtext0: #a5adcb;
+$subtext1: #b8c0e0;
+
+$rosewater: #f4dbd6;
+$flamingo: #f0c6c6;
+$pink: #f5bde6;
+$mauve: #c6a0f6;
+$red: #ed8796;
+$maroon: #ee99a0;
+$peach: #f5a97f;
+$yellow: #eed49f;
+$green: #a6da95;
+$teal: #8bd5ca;
+$sky: #91d7e3;
+$sapphire: #7dc4e4;
+$blue: #8aadf4;
+$lavender: #b7bdf8;
+
+// Global styling
+.toolbar {
+    background-color: $base;
+    color: $text;
+    padding: 0px;
+    font-size: 18px;
+}
+
+////////////////////////////////////////////////////////////////////////////////
+//////   Left Side
+////////////////////////////////////////////////////////////////////////////////
+
+////////////////////////////////////////////////////////////////////////////////
+///   Spotify/Music Player
+
+.spotify {
+    padding: 7px 7px 7px 7px;
+    background-color: $base;
+    border-radius: 7px;
+    border-style: solid;
+    border-color: $surface0;
+    border-width: 1px;
+}
+
+.song_info {
+    font-size: 16px;
+    margin: 14px 7px 7px 7px;
+    color: $text;
+}
+
+.player_controls {
+    font-size: 20px;
+    margin: 7px 7px 7px 7px;
+}
+
+@keyframes text_scroll {
+    from {
+        margin-left: 0px;
+        margin-right: 0px;
+    }
+
+    30% {
+        margin-left: 0px;
+        margin-right: 0px;
+    }
+
+    98% {
+        margin-left: -150px;
+        margin-right: 1500px;
+    }
+
+    to {
+        margin-left: -150px;
+        margin-right: 1500px;
+    }
+}
+
+.spotify_logo {
+    margin: 3px 7px 3px 3px;
+    padding: 0px 7px 0px 7px;
+    color: $green;
+    border-radius: 5px;
+    background-color: $surface0;
+}
+
+.spotify_ctrl {
+    margin: 0 7px 0 7px;
+    color: $lavender;
+}
+
+scale trough {
+    all: unset;
+    background-color: $surface0;
+    border-radius: 5px;
+    min-height: 10px;
+    min-width: 100px;
+    margin: 3px 7px 3px 7px;
+}
+
+.track_slider trough highlight {
+    background-color: $mauve;
+    border-radius: 5px;
+}
+
+.album_art {
+    margin: 3px 7px 3px 3px;
+    border-color: $surface0;
+    border-width: 5px;
+    border-style: solid;
+    border-radius: 5px;
+}
+
+////////////////////////////////////////////////////////////////////////////////
+///   Powermenu
+
+.powermenu {
+    margin: 3px 4px 3px 3px;
+    padding: 0px 7px 0px 7px;
+    border-radius: 5px;
+    color: $peach;
+    background-color: $surface0;
+}
+
+////////////////////////////////////////////////////////////////////////////////
+//////   Desktops
+////////////////////////////////////////////////////////////////////////////////
+
+.desktops {
+    margin: 2px 0px 2px 0px;
+    padding: 1px 3px 2px 3px;
+    border-radius: 5px;
+    background-color: $surface0;
+}
+
+/* Unoccupied */
+.0 {
+    margin: 3px 0px 3px 0px;
+    padding: 0 3px 0 3px;
+    font-size: 20px;
+    color: $surface1;
+}
+
+/* Occupied */
+.0I, .0II, .0III, .0IV, .0V, .0VI, .0VII, .0VIII, .0IX, .0X {
+    margin: 3px 0px 3px 0px;
+    padding: 0 3px 0 3px;
+    font-size: 20px;
+    color: $lavender;
+}
+
+/* Focused */
+.0IF, .0IIF, .0IIIF, .0IVF, .0VF, .0VIF, .0VIIF, .0VIIIF, .0IXF, .0XF {
+    margin: 3px 0px 3px 0px;
+    padding: 0 3px 0 3px;
+    font-size: 20px;
+    color: $lavender;
+}
+
+/* Unoccupied Focused */
+.0F {
+    margin: 3px 0px 3px 0px;
+    padding: 0 3px 0 3px;
+    font-size: 20px;
+    color: $lavender;
+}
+
+////////////////////////////////////////////////////////////////////////////////
+//////   Right Side - Status Stuff
+////////////////////////////////////////////////////////////////////////////////
+
+.system_stats {
+    margin: 3px 0px 3px 0px;
+    background-color: $surface0;
+    border-radius: 5px;
+}
+
+////////////////////////////////////////////////////////////////////////////////
+///   Ram
+
+.ram {
+    // margin: 3px 0px 3px 0px;
+    // border-style: solid;
+    // border-width: 1px;
+    // border-color: $surface0;
+}
+
+.ram_icon {
+    margin: 3px 0px 3px 0px;
+    padding: 0 7px 0 7px;
+    color: $teal;
+}
+
+.ram_usage {
+    margin: 3px 3px 3px 3px;
+    padding: 0 7px 0 7px;
+    color: $teal;
+    border-radius: 5px;
+    background-color: $base;
+}
+
+////////////////////////////////////////////////////////////////////////////////
+///   Volume
+
+.volume {
+    margin: 3px 7px 3px 7px;
+    // border-style: solid;
+    // border-width: 1px;
+    border-color: $surface0;
+}
+
+.volume_icon {
+    margin: 3px 0px 3px 0px;
+    padding: 0px 7px 0px 7px;
+    color: $sky;
+}
+
+.volume_bar_background {
+    margin: 3px 3px 3px 3px;
+    padding: 0 7px 0 7px;
+    border-radius: 5px;
+    background-color: $base;
+}
+
+scale trough {
+    all: unset;
+    background-color: $surface0;
+    border-radius: 5px;
+    min-height: 10px;
+    min-width: 80px;
+    margin: 3px 7px 3px 7px;
+}
+
+.volume_bar trough highlight {
+    background-color: $sky;
+    border-radius: 5px;
+}
+
+////////////////////////////////////////////////////////////////////////////////
+///   Clock
+
+.clock {
+    color: $text;
+}
+
+.clock_text {
+    margin: 3px 7px 3px 7px;
+    background-color: $surface0;
+    border-radius: 5px;
+    min-width: 110px;
+}
+
+.calendar {
+    background-color: $base;
+    color: $text;
+    padding: 7px;
+    border-radius: 7px;
+    border-style: solid;
+    border-width: 1px;
+    border-color: $surface0;
+}
