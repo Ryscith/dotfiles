@@ -2,15 +2,16 @@
 # ~/.bashrc
 #
 
+### Path for Raspberry Pi Pico SDK
+
+export PICO_SDK_PATH="/home/ryscith/Pico/pico-sdk"
+
 ### Make a bonsai tree in every new terminal
 #cbonsai -p
 
 export CDPATH=":$HOME:$HOME/College/CollegeClasses/Year4Senior:$HOME/College:/run/media/ryscith"
 
 export PATH="/home/ryscith/.local/bin:/home/ryscith/.emacs.d/bin:$PATH"
-
-### Apply pywal theme to new instances
-(cat ~/.cache/wal/sequences &)
 
 # If not running interactively, don't do anything
 [[ $- != *i* ]] && return
@@ -27,7 +28,7 @@ export PS1="prompt>>"
 #PS1="\[$(tput setaf 202)\][\[$(tput setaf 134)\]\u\[$(tput setaf 202)\]@\[$(tput setaf 134)\]\h \[$(tput setaf 123)\]\W \[$(tput setaf 202)\]]\$\[$(tput sgr0)\] "
 
 # This prompt ends up being: [user@computer directory ]$
-PS1="\[$(tput setaf 134)\][ \[$(tput setaf 202)\]\W\[$(tput setaf 134)\] ]\$\[$(tput sgr0)\] "
+PS1="\[$(tput setaf 105)\][ \[$(tput setaf 215)\]\W\[$(tput setaf 105)\] ]\$\[$(tput sgr0)\] "
 
 ### Alternate utils
 

@@ -8,13 +8,19 @@
 #
 # All imports must either be absolute paths starting with `/`, or paths relative
 # to the user's home directory starting with `~/`.
-#import:
+import:
+  - ~/.config/alacritty/catppuccin/catppuccin-mocha.yml
+# uncomment the flavour you want below:
+  # - ~/.config/alacritty/catppuccin/catppuccin-macchiato.yml
+#  - ~/.config/alacritty/catppuccin/catppuccin-frappe.yml
+#  - ~/.config/alacritty/catppuccin/catppuccin-latte.yml
 #  - /path/to/alacritty.yml
 
 # Any items in the `env` entry below will be added as
 # environment variables. Some entries may override variables
 # set by alacritty itself.
-#env:
+env:
+  TERM: xterm-256color
   # TERM variable
   #
   # This value is used to set the `$TERM` environment variable for
@@ -63,7 +69,7 @@ window:
   #     - buttonless: Title bar, transparent background and no title bar buttons
   decorations: full
 
-  opacity: 0.85
+  opacity: 0.75
 
   # Startup Mode (changes require restart)
   #
