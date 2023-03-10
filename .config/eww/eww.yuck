@@ -19,6 +19,26 @@
         (desktops)
         (rightside)))
 
+(defwindow vert_monitor_toolbar
+           :monitor 1
+           :windowtype "dock"
+           :geometry (geometry :x "0px"
+                               :y "0px"
+                               :width "100%"
+                               :height "36px"
+                               :anchor "top center")
+           :stacking "bg"
+           :reserve (struts :distance "36px" :side "top")
+           :wm-ignore false
+    (vert_monitor_bar))
+
+(defwidget vert_monitor_bar []
+    (centerbox :orientation "h"
+               :space-evenly false
+               (vert_monitor_leftside)
+               (desktops)
+               (rightside)))
+
 ;
 ; Left Side Widgets
 ;
@@ -27,16 +47,51 @@
     (box :class "leftside"
          :halign "start"
          :space-evenly false
-         (powermenu)
+         (powermenu_icon)
          (spotify_logo)))
+
+(defwidget vert_monitor_leftside []
+    (box :class "leftside"
+         :halign "start"
+         :space-evenly false))
 
 ;
 ; Powermenu
 ;
 
+(defwidget powermenu_icon []
+    (eventbox :onclick "${EWW_CMD} open powermenu_window"
+              (label  :class "powermenu_icon"
+                      :text "")))
+
 (defwidget powermenu []
-    (label  :class "powermenu"
-            :text ""))
+    (eventbox :onhoverlost "${EWW_CMD} close powermenu_window"
+              (box :class "powermenu"
+                   :space-evenly false
+                   :orientation "v"
+                   (eventbox :onclick "sudo grub-reboot 'Windows Boot Manager (on /dev/sdb2)' && reboot"
+                             (box   :class "windows_icon"
+                                    :space-evenly false
+                                    (label :text "   ")
+                                    (label :text "Windows")))
+                   (eventbox :onclick "reboot"
+                             (box   :class "reboot_icon"
+                                    :space-evenly false
+                                    (label :text "   ")
+                                    (label :text "Reboot")))
+                   (eventbox :onclick "shutdown now"
+                             (box   :class "shutdown_icon"
+                                    :space-evenly false
+                                    (label :text "   ")
+                                    (label :text "Shutdown"))))))
+
+(defwindow powermenu_window
+           :geometry (geometry :x "3px"
+                               :y "38px"
+                               :anchor "top left"
+                               )
+           (powermenu))
+
 
 ;
 ; Spotify
@@ -70,7 +125,7 @@
          "playerctl -p spotify metadata mpris:length")
 
 (defwidget spotify_logo []
-           (eventbox :onhover "${EWW_CMD} open spotify_window & ${album_art_script}"
+           (eventbox :onclick "${EWW_CMD} open spotify_window & ${album_art_script}"
                      :timeout "5s"
                      (label :class "spotify_logo"
                            :text "")))
@@ -121,7 +176,7 @@
 
 (defwindow spotify_window
            :geometry (geometry :x "20px"
-                               :y "40px"
+                               :y "38px"
                                :anchor "top left"
                                )
            (spotify))
@@ -155,6 +210,7 @@
     (box :class "system_stats"
          :orientation "h"
          :space-evenly false
+         (wifi)
          (ram)
          (volume)))
 
@@ -199,7 +255,7 @@
 
 (defwindow calendar
            :geometry (geometry :x "-10px"
-                               :y "40px"
+                               :y "38px"
                                :anchor "top right"
                                :width "270px"
                                :height "60px")
@@ -217,11 +273,61 @@
                    (label :class "clock_text" :text "${time}"))))
 
 ;
+; WiFi / Internet
+;
+
+(defpoll wifi_name
+         :interval "1s"
+         :initial "WiFi"
+         :run-while reveal_wifi
+         `nmcli c | awk 'NR==2 {print $1}'`)
+(defvar reveal_wifi false)
+
+(defwidget wifi []
+    (box :orientation "h"
+         :space-evenly false
+         (eventbox :class "wifi"
+                   :onhover "${EWW_CMD} update reveal_wifi=true"
+                   :onhoverlost "${EWW_CMD} update reveal_wifi=false"
+                   (box :orientation "h"
+                        :space-evenly false
+                        (revealer :transition "slideleft"
+                                  :reveal reveal_wifi
+                                  :duration "500ms"
+                                  (label :class "wifi_info"
+                                         :text "${wifi_name}"))
+                        (label :class "wifi_icon"
+                               :text "")))))
+
+;
+; RAM Usage
+;
+
+(defvar reveal_ram false)
+
+(defwidget ram []
+    (box :orientation "h"
+         :space-evenly false
+         (eventbox :class "ram"
+                   :onhover "${EWW_CMD} update reveal_ram=true"
+                   :onhoverlost "${EWW_CMD} update reveal_ram=false"
+                   (box :orientation "h"
+                        :space-evenly false
+                        (revealer :transition "slideleft"
+                                  :reveal reveal_ram
+                                  :duration "500ms"
+                                  (label :class "ram_usage"
+                                         :text "${round(EWW_RAM.used_mem / 1000000000, 2)} GB"))
+                        (label :class "ram_icon"
+                               :text "")))))
+
+;
 ; Volume
 ;
 
 (defpoll volume_percent :interval "1s"
                         :initial "50"
+                        :run-while reveal_vol
          "amixer -D pulse sget Master | awk -F'[][]' '/Left:/ {print $2}' | tr -d '%'")
 (defvar reveal_vol false)
 
@@ -246,30 +352,3 @@
                                              :min 0
                                              :onchange "amixer -D pulse sset Master {}%")))
                        (button :onclick "pavucontrol &" :class "volume_icon" "")))))
-
-;
-; RAM Usage
-;
-
-(defpoll ram_usage
-         :interval "1s"
-         :initial "0.0 Gi"
-         "free -h | awk '/Mem:/ {print $3}' | sed -E 's/([[:digit:].]*)([[:alpha:]]*)/\\1 \\2/g'")
-
-(defvar reveal_ram false)
-
-(defwidget ram []
-    (box :orientation "h"
-         :space-evenly false
-         (eventbox :class "ram"
-                   :onhover "${EWW_CMD} update reveal_ram=true"
-                   :onhoverlost "${EWW_CMD} update reveal_ram=false"
-                   (box :orientation "h"
-                        :space-evenly false
-                        (revealer :transition "slideleft"
-                                  :reveal reveal_ram
-                                  :duration "500ms"
-                                  (label :class "ram_usage"
-                                         :text "${ram_usage}"))
-                        (label :class "ram_icon"
-                               :text "")))))
